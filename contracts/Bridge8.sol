@@ -86,7 +86,7 @@ contract Bridge8 is OwnableUpgradeable, ReentrancyGuardUpgradeable {
     function lock(address inToken, uint256 _amount, uint256 dstId) external payable nonReentrant {
         require(_amount > 0, "AMOUNT_CANT_BE_ZERO");    
         require(inToken != address(0), "TOKEN_ADDRESS_CANT_BE_NULL");
-
+        require(inToken.code.length > 0, "TOKEN_NOT_ON_THIS_CHAIN");
         address outToken = tokenToToken[inToken];
         require(outToken != address(0), "UNSUPPORTED_TOKEN");
         
