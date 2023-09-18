@@ -3,8 +3,6 @@
 pragma solidity ^0.8.0;
 
 import "./WrappedToken.sol";
-// import "./interfaces/IBridge.sol";
-
 
 contract Factory {
 
